@@ -18,12 +18,22 @@ def create_tables():
     
     commands = (
         """
+        DROP TABLE IF EXISTS bookings CASCADE
+        """,
+        """
+        DROP TABLE IF EXISTS currency_rates CASCADE
+        """,
+        """
+        DROP TABLE IF EXISTS monthly_revenue CASCADE
+        """,
+        """
         CREATE TABLE IF NOT EXISTS bookings (
             booking_id UUID PRIMARY KEY,
             check_in_date TIMESTAMP NOT NULL,
             check_out_date TIMESTAMP NOT NULL,
             owner_company TEXT NOT NULL,
-            owner_company_country TEXT NOT NULL
+            owner_company_country TEXT NOT NULL,
+            currency TEXT NOT NULL
         )
         """,
         """
