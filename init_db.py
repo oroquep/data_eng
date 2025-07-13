@@ -27,6 +27,14 @@ def create_tables():
         )
         """,
         """
+        CREATE TABLE IF NOT EXISTS currency_rates (
+            from_currency TEXT PRIMARY KEY,
+            to_currency TEXT NOT NULL,
+            rate NUMERIC NOT NULL,
+            rate_date DATE NOT NULL
+        )
+        """,
+        """
         CREATE TABLE IF NOT EXISTS monthly_revenue (
             month DATE NOT NULL,
             owner_company TEXT NOT NULL,

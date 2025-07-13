@@ -16,4 +16,7 @@ sleep 10
 # Run DB init with venv Python
 python init_db.py
 
+# Load Currency Rates on setup
+python load_currency_rates.py
+
 echo "Database setup complete!"
